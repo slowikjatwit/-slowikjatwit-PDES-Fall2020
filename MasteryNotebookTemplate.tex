@@ -1,5 +1,12 @@
 \documentclass{article}
 
+%% MasteryNotebookTemplate.tex (c) by Emma Smith Zbarsky
+%% MasteryNotebookTemplate.tex is licensed under a
+%% Creative Commons Attribution 3.0 Unported License.
+
+%%You should have received a copy of the license along with this
+%%work.  If not, see <http://creativecommons.org/licenses/by/3.0/>.
+
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{amssymb,amsmath, multirow}
 \usepackage[initials]{amsrefs}
@@ -42,9 +49,11 @@
 \def\bpm{\begin{pmatrix}}
 \def\epm{\end{pmatrix}}
 \def\O{\mathcal{O}}
+\newcommand{\checked}{\makebox[0pt][l]{$\checkmark$}$\square$}
+\newcommand{\unchecked}{$\Box$}
 %\Theoremstyle{remark}
 
-% Bernard's macros
+% Bernard Deconinck's macros
 \newcommand{\beq}{\begin{equation}}
 \newcommand{\eeq}{\end{equation}}
 \newcommand{\ba}{\begin{array}}
@@ -53,14 +62,12 @@
 \newcommand{\eea}{\end{eqnarray*}}
 \newcommand{\bc}{\begin{center}}
 \newcommand{\ec}{\end{center}}
-%\newcommand{\ds}{\displaystyle}
 \newcommand{\bt}{\begin{table}}
 \newcommand{\et}{\end{table}}
 \newcommand{\la}[1]{\label{#1}}
 \newcommand{\p}{\partial}
 \newcommand{\pp}[2]{{\partial #1 \over \partial #2}}
 \newcommand{\ppn}[3]{{\partial^{#1} #2 \over \partial #3^{#1}}}
-\newcommand{\Pain}{Painlev\'{e} }
 \newcommand{\mbf}[1]{\mbox{\boldmath {$#1$}}}
 \newcommand{\red}[1]{\textcolor{red}{#1}}
 \newcommand{\green}[1]{\textcolor{green}{#1}}
@@ -94,32 +101,34 @@
 
 % Text of Document.  Use constructs such as \section, \subsection,
 % \begin{theorem} ... \end{theorem}, \begin{proof} ... \end{proof}, etc.
-% See 
 
 \section{Mastery Check Planning}
+
+% To check a box in the Productive Failure? column, replace the code \unchecked with \checked and recompile. 
+
 \begin{tabular}{|l|c|c|c|c} \cline{1-4}
-\textbf{Standard} & Suggested & Mastery Date & Writeup & Productive  \\ 
+\multirow{2}{5cm}{\textbf{Standard}} & Suggested & Mastery Date & Writeup & Productive  \\ 
 & Date & & Completed & Failure? \\ \cline{1-4}
-\multirow{2}{5cm}{NM: Order of Error} & \multirow{2}{1.5cm}{Wk2} &&& \multirow{2}{.4cm}{$\Box$} \\ &&&& \\ \cline{1-4}
-\multirow{2}{5cm}{NM: Explicit Difference} & \multirow{2}{1.5cm}{Wk 3} &&& \multirow{2}{.4cm}{$\Box$} \\ &&&& \\ \cline{1-4}
-\multirow{2}{5cm}{MC: Linear, constant speed}  & \multirow{2}{1.5cm}{Wk 3}&&& \multirow{2}{.4cm}{$\Box$} \\ &&&& \\ \cline{1-4}
-\multirow{2}{5cm}{MC: Linear, polynomial speed} & \multirow{2}{1.5cm}{Wk 4}&&& \multirow{2}{.4cm}{$\Box$} \\ &&&& \\ \cline{1-4}
-\multirow{2}{5cm}{MC: Nonlinear} &\multirow{2}{1.5cm}{Wk 4}&&& \multirow{2}{.4cm}{$\Box$} \\ &&&& \\ \cline{1-4}
-\multirow{2}{5cm}{MC: Shock} &\multirow{2}{1.5cm}{Wk 5}&&& \multirow{2}{.4cm}{$\Box$} \\ &&&& \\ \cline{1-4}
-\multirow{2}{5cm}{MC: Rarefaction} & \multirow{2}{1.5cm}{Wk 5}&&& \multirow{2}{.4cm}{$\Box$} \\ &&&& \\ \cline{1-4}
-\multirow{2}{5cm}{NM: Neumann stability} &\multirow{2}{1.5cm}{Wk 6}&&& \multirow{2}{.4cm}{$\Box$} \\ &&&& \\ \cline{1-4}
-\multirow{2}{5cm}{NM: CFL condition} &\multirow{2}{1.5cm}{Wk 6}&&& \multirow{2}{.4cm}{$\Box$} \\ &&&& \\ \cline{1-4}
-\multirow{2}{5cm}{NM: Implicit Difference} &\multirow{2}{1.5cm}{Wk 6}&&& \multirow{2}{.4cm}{$\Box$} \\ &&&& \\ \cline{1-4}
-\multirow{2}{5cm}{FS: Real Fourier Series} & \multirow{2}{1.5cm}{Wk 7} &&& \multirow{2}{.4cm}{$\Box$} \\ &&&& \\ \cline{1-4}
-\multirow{2}{5cm}{FS: Complex Fourier Series} & \multirow{2}{1.5cm}{Wk 7} &&& \multirow{2}{.4cm}{$\Box$} \\ &&&& \\ \cline{1-4}
-\multirow{2}{7cm}{FS: Convergence of Fourier Series} & \multirow{2}{1.5cm}{Wk 8} &&& \multirow{2}{.4cm}{$\Box$} \\ &&&& \\  \cline{1-4}
-\multirow{2}{7cm}{FS: Integrability \& Differentiability of FS} & \multirow{2}{1.5cm}{Wk 8} &&& \multirow{2}{.4cm}{$\Box$} \\ &&&& \\  \cline{1-4}
-\multirow{2}{5cm}{FS: Boundary Conditions} & \multirow{2}{1.5cm}{Wk 9} &&& \multirow{2}{.4cm}{$\Box$} \\ &&&& \\ \cline{1-4}
-\multirow{2}{5cm}{SV: Heat Equation} & \multirow{2}{1.5cm}{Wk 10} &&& \multirow{2}{.4cm}{$\Box$} \\ &&&& \\ \cline{1-4}
-\multirow{2}{5cm}{SV: Equilibrium behavior} & \multirow{2}{1.5cm}{Wk 10} &&& \multirow{2}{.4cm}{$\Box$} \\ &&&& \\ \cline{1-4}
-\multirow{2}{5cm}{SV: Wave equation} & \multirow{2}{1.5cm}{Wk 11} &&& \multirow{2}{.4cm}{$\Box$} \\ &&&& \\ \cline{1-4}
-\multirow{2}{5cm}{SV: d'Alembert's equation} & \multirow{2}{1.5cm}{Wk 12} &&& \multirow{2}{.4cm}{$\Box$} \\ &&&& \\ \cline{1-4}
-\multirow{2}{5cm}{SV: Laplace equation} & \multirow{2}{1.5cm}{Wk 13} &&& \multirow{2}{.4cm}{$\Box$} \\ &&&& \\ \cline{1-4}
+\multirow{2}{5cm}{NM: Order of Error} & \multirow{2}{1.5cm}{Wk 2} &&& \multirow{2}{.4cm}{\unchecked} \\ &&&& \\ \cline{1-4}
+\multirow{2}{5cm}{NM: Explicit Difference} & \multirow{2}{1.5cm}{Wk 3} &&& \multirow{2}{.4cm}{\unchecked} \\ &&&& \\ \cline{1-4}
+\multirow{2}{5cm}{MC: Linear, constant speed}  & \multirow{2}{1.5cm}{Wk 3}&&& \multirow{2}{.4cm}{\unchecked} \\ &&&& \\ \cline{1-4}
+\multirow{2}{5cm}{MC: Linear, polynomial speed} & \multirow{2}{1.5cm}{Wk 4}&&& \multirow{2}{.4cm}{\unchecked} \\ &&&& \\ \cline{1-4}
+\multirow{2}{5cm}{MC: Nonlinear} &\multirow{2}{1.5cm}{Wk 4}&&& \multirow{2}{.4cm}{\unchecked} \\ &&&& \\ \cline{1-4}
+\multirow{2}{5cm}{MC: Shock} &\multirow{2}{1.5cm}{Wk 5}&&& \multirow{2}{.4cm}{\unchecked} \\ &&&& \\ \cline{1-4}
+\multirow{2}{5cm}{MC: Rarefaction} & \multirow{2}{1.5cm}{Wk 5}&&& \multirow{2}{.4cm}{\unchecked} \\ &&&& \\ \cline{1-4}
+\multirow{2}{5cm}{NM: Neumann stability} &\multirow{2}{1.5cm}{Wk 6}&&& \multirow{2}{.4cm}{\unchecked} \\ &&&& \\ \cline{1-4}
+\multirow{2}{5cm}{NM: CFL condition} &\multirow{2}{1.5cm}{Wk 6}&&& \multirow{2}{.4cm}{\unchecked} \\ &&&& \\ \cline{1-4}
+\multirow{2}{5cm}{NM: Implicit Difference} &\multirow{2}{1.5cm}{Wk 6}&&& \multirow{2}{.4cm}{\unchecked} \\ &&&& \\ \cline{1-4}
+\multirow{2}{5cm}{FS: Real Fourier Series} & \multirow{2}{1.5cm}{Wk 7} &&& \multirow{2}{.4cm}{\unchecked} \\ &&&& \\ \cline{1-4}
+\multirow{2}{5cm}{FS: Complex Fourier Series} & \multirow{2}{1.5cm}{Wk 7} &&& \multirow{2}{.4cm}{\unchecked} \\ &&&& \\ \cline{1-4}
+\multirow{2}{7cm}{FS: Convergence of Fourier Series} & \multirow{2}{1.5cm}{Wk 8} &&& \multirow{2}{.4cm}{\unchecked} \\ &&&& \\  \cline{1-4}
+\multirow{2}{7cm}{FS: Integrability \& Differentiability of FS} & \multirow{2}{1.5cm}{Wk 8} &&& \multirow{2}{.4cm}{\unchecked} \\ &&&& \\  \cline{1-4}
+\multirow{2}{5cm}{FS: Boundary Conditions} & \multirow{2}{1.5cm}{Wk 9} &&& \multirow{2}{.4cm}{\unchecked} \\ &&&& \\ \cline{1-4}
+\multirow{2}{5cm}{SV: Heat Equation} & \multirow{2}{1.5cm}{Wk 10} &&& \multirow{2}{.4cm}{\unchecked} \\ &&&& \\ \cline{1-4}
+\multirow{2}{5cm}{SV: Equilibrium behavior} & \multirow{2}{1.5cm}{Wk 10} &&& \multirow{2}{.4cm}{\unchecked} \\ &&&& \\ \cline{1-4}
+\multirow{2}{5cm}{SV: Wave equation} & \multirow{2}{1.5cm}{Wk 11} &&& \multirow{2}{.4cm}{\unchecked} \\ &&&& \\ \cline{1-4}
+\multirow{2}{5cm}{SV: d'Alembert's equation} & \multirow{2}{1.5cm}{Wk 12} &&& \multirow{2}{.4cm}{\unchecked} \\ &&&& \\ \cline{1-4}
+\multirow{2}{5cm}{SV: Laplace equation} & \multirow{2}{1.5cm}{Wk 13} &&& \multirow{2}{.4cm}{\unchecked} \\ &&&& \\ \cline{1-4}
 \multirow{2}{5cm}{Final Preparations} & \multirow{2}{1.8cm}{Wk 14/15} &&&   \\&&&& \\ \cline{1-4}
 \end{tabular}
 \newpage
@@ -127,6 +136,7 @@
 %\section{Numerical Methods}
 \section{Numerical Methods of Solving Partial Differential Equations}
 \red{Give a brief overview of this section of the class. The following would be a sample introduction to such a section from an ordinary differential equations class.}
+% Don't forget to delete all of the commentary and sample code before you submit this as your Mastery Notebook.
 
 A first order initial value problem takes the form \(\ds \d{y}{t} = f(y,t)\) with \(\ds y(t_0)=y_0\). Such functions are studied in a first class on differential equations in a variety of special cases (e.g. separable equations or linear
 equations) but there is no general analytic method that works for every \(f\). We shall explore some numerical methods of finding a solution.
