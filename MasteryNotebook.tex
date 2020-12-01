@@ -105,7 +105,7 @@
 & Date & & Completed & Failure? \\ \cline{1-4}
 \multirow{2}{5cm}{NM: Order of Error} & \multirow{2}{1.5cm}{Wk 2} & 9/18/20 & 9/26/20 & \multirow{2}{.4cm}{\unchecked} \\ &&&& \\ \cline{1-4}
 \multirow{2}{5cm}{NM: Explicit Difference} & \multirow{2}{1.5cm}{Wk 3} & need & date here & \multirow{2}{.4cm}{\unchecked} \\ &&&& \\ \cline{1-4}
-\multirow{2}{5cm}{MC: Linear, constant speed}  & \multirow{2}{1.5cm}{Wk 3} & 10/2/20 & date here & \multirow{2}{.4cm}{\checked} \\ &&&& \\ \cline{1-4}
+\multirow{2}{5cm}{MC: Linear, constant speed}  & \multirow{2}{1.5cm}{Wk 3} & 10/2/20 & 11/29/20 & \multirow{2}{.4cm}{\checked} \\ &&&& \\ \cline{1-4}
 \multirow{2}{5cm}{MC: Linear, polynomial speed} & \multirow{2}{1.5cm}{Wk 4} & 10/2/20 & date here & \multirow{2}{.4cm}{\unchecked} \\ &&&& \\ \cline{1-4}
 \multirow{2}{5cm}{MC: Nonlinear} &\multirow{2}{1.5cm}{Wk 4}&&& \multirow{2}{.4cm}{\unchecked} \\ &&&& \\ \cline{1-4}
 \multirow{2}{5cm}{MC: Shock} &\multirow{2}{1.5cm}{Wk 5}& need & date here & \multirow{2}{.4cm}{\checked} \\ &&&& \\ \cline{1-4}
@@ -277,17 +277,28 @@ C can take the form of a constant or a polynomial and the equation could be homo
 \subsection{Solving $u_t+cu_x +du = g(x)$ with $u(0,x)=f(x)$}
 %\blue{Explain how to solve such a problem when $c$ and $d$ are constants. Then present your solution to the mastery problem I gave you.}
 
-First, consider what we know about $u(t,x)$ and $u(0,x)=f(x)$ \\
+First, let's consider what we know about $u(t,x)$ and $u(0,x)=f(x)$ \\
 
 The level curves of the solution u(t,x) on the t,x plane are curves of constant value for u(t,x). No matter which point we choose on the curve, we get the same value for u(t,x). A characteristic variable $\xi$ can be introduced that we choose to define as $\xi = x-ct$. $\xi$ represents a level curve of the solution on the t,x plane where $c$ is a constant slope and $\xi$ is the x-intercept.\\
 
-Since we know the initial condition $u(0,x) = f(x)$, we know what the solution looks like at $t=0$. If every point on our level curve gives the same value for $u(t,x)$, we can go to where $t=0$ on our level curve, which is equal to $\xi$, and know the value of the function. Therefore, $f(\xi)$ = $f(x)$ and we can plug in $\xi$ for x in the initial condition to get $u(t,x)$ \\
+Since we know the initial condition $u(0,x) = f(x)$, we know what the solution looks like at $t=0$. If every point on our level curve gives the same value for $u(t,x)$, we can go to where $t=0$ on our level curve, which is equal to $\xi$, and know the value of the function. $\xi$ will be exactly $f$ at time 0. Therefore, $f(\xi)$ = $f(x)$ and we can plug in $\xi$ for x in the initial condition to get $u(t,x)$ \\
 
 The mastery problem I was given: Find $u(t,x)$ given $u_t-5u_x=12$ with $u(0,x) = \dfrac{arctan(x)}{(x^2+1)}$ \\
 
-First, solve for u(t,x) as if $u_t-5u_x=12$ was homogeneous: 
+First, solve for u(t,x) like $u_t-5u_x=12$ was homogeneous:\newline 
+
+The level sets of the solution look like:
 \bea
-\dfrac{dh}{dt} &=& 0  = \dfrac{du}{dx}\dfrac{dt}{dt} + \dfrac{dx}{dt}\dfrac{du}{dx}\\
+h = u(t,x(t)) = constant \\
+\eea
+
+Take the normal derivative of both sides:
+\bea
+\dfrac{dh}{dt} &=& 0  = \dfrac{du}{dt}\dfrac{dt}{dt} + \dfrac{dx}{dt}\dfrac{du}{dx}\\
+\eea
+
+This looks like the given equation when:
+\bea
 c &=& \dfrac{dx}{dt} = -5 \\
 \xi &=& x-ct \\
 \xi &=& x+5t  \\
@@ -303,16 +314,56 @@ u(t,x) &=& \dfrac{arctan(x+5t)}{((x+5t)^2+1)} + 12t + g(\xi) \\
 
 
 
-
-
 \subsection{Solving the linear transport equation with polynomial coefficients}
-\red{Explain how to solve such a problem when the wave speed is polynomial in $t$ or polynomial in $x$. Then demonstrate the solution with the mastery problem I gave you to solve.}
-\subsection{Solving first order nonlinear PDEs using the method of characteristics}
+%\red{Explain how to solve such a problem when the wave speed is polynomial in $t$ or polynomial in $x$. Then demonstrate the solution with the mastery problem I gave you to solve.}
 %The function u depends on t and x but x depends on t, so we can say that: \\
 %\bea
 %u(t,x(t)) = v = constant value \\
 %\eea
+We can solve linear transport equations with polynomial coefficients using the same idea as when they had constant coefficients. However, because the wave speed $c$ is not a constant, we can't find $\xi$ right away and will need to solve for it with separation of variables and integration. \newline
 
+The mastery problem I was given: Find $u(t,x)$ given $u_t+(x^2+1)sin(t)u_x=0$ with $u(0,x) = e^{-x^2}cos(x)$ \\
+
+The level sets of the solution look like:
+\bea
+h(t) = u(t,x(t)) = constant\\
+\eea
+
+Take the normal derivative of both sides:
+\bea
+\dfrac{dh}{dt} &=& 0  = \dfrac{du}{dt}\dfrac{dt}{dt} + \dfrac{dx}{dt}\dfrac{du}{dx}\\
+\eea
+
+This looks like the given equation when:
+\bea
+\dfrac{dx}{dt} &=& (x^2+1)sin(t) \\
+\eea
+
+Separation of variables:
+\bea
+\dfrac{dx}{(x^2+1)} &=& sin(t)dt \\
+\eea
+
+Integrate and solve for $\xi$
+\bea
+\int_{\xi}^{x} \dfrac{1}{(x^2+1)}dx &=& \int_{0}^{t} sin(t)dt\\
+arctan(x)\Big|_\xi^x &=& -cos(t)\Big|_0^t\\
+tan^{-1}(x)-tan^{-1}(\xi) &=& -cos(t) + 1\\
+tan^{-1}(\xi) &=& tan^{-1}(x) + cos(t) - 1\\
+\xi &=& tan(tan^{-1}(x) + cos(t) - 1)\\
+\eea 
+
+
+Plug back in to the initial condition $u(0,x) = e^{-x^2}cos(x)$:
+\bea
+u(t,x) = e^{-(tan(tan^{-1}(x) + cos(t) - 1))^2}cos(tan(tan^{-1}(x) + cos(t) - 1))\newline
+\eea
+In this case, there is nothing more to add on at the end because the given function was homogeneous.
+
+
+
+
+\subsection{Solving first order nonlinear PDEs using the method of characteristics}
 
 \blue{Explain how to solve a problem of the form $u_t+g(u)u_x=0$. Then solve the mastery problem I gave you to solve. What follows is a sample use of equation array and piecewise defined functions.}
   \bea
