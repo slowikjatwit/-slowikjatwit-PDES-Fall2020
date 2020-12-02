@@ -106,7 +106,7 @@
 \multirow{2}{5cm}{NM: Order of Error} & \multirow{2}{1.5cm}{Wk 2} & 9/18/20 & 9/26/20 & \multirow{2}{.4cm}{\unchecked} \\ &&&& \\ \cline{1-4}
 \multirow{2}{5cm}{NM: Explicit Difference} & \multirow{2}{1.5cm}{Wk 3} & need & date here & \multirow{2}{.4cm}{\unchecked} \\ &&&& \\ \cline{1-4}
 \multirow{2}{5cm}{MC: Linear, constant speed}  & \multirow{2}{1.5cm}{Wk 3} & 10/2/20 & 11/29/20 & \multirow{2}{.4cm}{\checked} \\ &&&& \\ \cline{1-4}
-\multirow{2}{5cm}{MC: Linear, polynomial speed} & \multirow{2}{1.5cm}{Wk 4} & 10/2/20 & date here & \multirow{2}{.4cm}{\unchecked} \\ &&&& \\ \cline{1-4}
+\multirow{2}{5cm}{MC: Linear, polynomial speed} & \multirow{2}{1.5cm}{Wk 4} & 10/2/20 & 11/30/20 & \multirow{2}{.4cm}{\unchecked} \\ &&&& \\ \cline{1-4}
 \multirow{2}{5cm}{MC: Nonlinear} &\multirow{2}{1.5cm}{Wk 4}&&& \multirow{2}{.4cm}{\unchecked} \\ &&&& \\ \cline{1-4}
 \multirow{2}{5cm}{MC: Shock} &\multirow{2}{1.5cm}{Wk 5}& need & date here & \multirow{2}{.4cm}{\checked} \\ &&&& \\ \cline{1-4}
 \multirow{2}{5cm}{MC: Rarefaction} & \multirow{2}{1.5cm}{Wk 5}&need & date here &  \multirow{2}{.4cm}{\unchecked} \\ &&&& \\ \cline{1-4}
@@ -269,7 +269,7 @@ differential equations as follows:
     system is said to be stiff in that interval. \cite{wikistiff}
     \end{quote}
     
-\section{Method of Characteristics}
+\section{The Method of Characteristics}
 %\red{Give an introduction to the method of characteristics.}
 The method of characteristics is used to solve first order linear and non-linear PDEs of the form $u_t+cu_x = d$.
 C can take the form of a constant or a polynomial and the equation could be homogeneous or non-homogeneous. The method of characteristics can be used to solve first order nonlinear PDEs as well, where c is a function of u. Using the method of characteristics requires an initial condition $u(0,x)=f(x)$ and that we consider what is happening with the level curves of our solution on the t,x plane. We will see what happens when c is a constant, a polynomial, and non-linear. 
@@ -331,7 +331,7 @@ h(t) = u(t,x(t)) = constant\\
 
 Take the normal derivative of both sides:
 \bea
-\dfrac{dh}{dt} &=& 0  = \dfrac{du}{dt}\dfrac{dt}{dt} + \dfrac{dx}{dt}\dfrac{du}{dx}\\
+\dfrac{dh}{dt} &=& \dfrac{du}{dt}\dfrac{dt}{dt} + \dfrac{dx}{dt}\dfrac{du}{dx} = 0\\
 \eea
 
 This looks like the given equation when:
@@ -402,11 +402,118 @@ $$\lim_{N\to \infty} E = \begin{cases} \infty &
   \end{center}
 For more information, see the Matlab documentation \cite{matlabode}.
 \section{Fourier Series}
-\blue{Give an introduction to Fourier series.}
+%\blue{Give an introduction to Fourier series.}
+Fourier series approximate functions with an infinite series of sines and cosines. They can be used to approximate real functions and complex functions. A complex Fourier Series can be written in terms of exponentials or sines and cosines because of their relationship for complex functions but will still be an infinite series. \newline
+A Fourier Series will only match the function it's approximating on the interval its Fourier Coefficients were integrated on because Fourier Series are periodic on intervals of 2L, where -L to L is the interval the function is being approximated on. 
+
 \subsection{Real Fourier Series}
-\red{Explain how to calculate the real Fourier series for a suitable function. Then present the example that you solved for your mastery check.}
+%\red{Explain how to calculate the real Fourier series for a suitable function. Then present the example that you solved for your mastery check.}
+A real Fourier Series has the form:
+\bea
+f(x) &\approx& \dfrac{a_0}{2}+\sum_{k=1}^{\infty} a_kcos(kx)+b_ksin(kx) \\
+\eea
+Where $a_k$ and $b_k$ are the $L_2$ inner product of the function $f(x)$ and $cos(kx)$ and $sin(kx)$: 
+\bea
+a_k &=& <f(x),cos(kx)> = \dfrac{1}{\pi}\int_{-\pi}^{\pi} f(x)cos(kx)dx, \hspace{.2in} k\geq0 \hspace{.1in} integers \\
+b_k &=& <f(x),sin(kx)> = \dfrac{1}{\pi}\int_{-\pi}^{\pi} f(x)sin(kx)dx, \hspace{.2in} k\geq1 \hspace{.1in} integers \\
+\eea
+We can extend a Fourier Series to an interval -L to L with the form:
+\bea
+f(x) &\approx& \dfrac{a_0}{2}+\sum_{k=1}^{\infty} a_kcos(\dfrac{k \pi x}{L})+b_ksin(\dfrac{k \pi x}{L}) \\
+\eea
+where:
+\bea
+a_k &=& <f(x),cos(kx)> = \dfrac{1}{L}\int_{-L}^{L} f(x)cos(\dfrac{k \pi x}{L})dx, \hspace{.2in}  k\geq0 \hspace{.1in} integers \\
+b_k &=& <f(x),sin(kx)> = \dfrac{1}{L}\int_{-L}^{L} f(x)sin(\dfrac{k \pi x}{L})dx, \hspace{.2in} k\geq1 \hspace{.1in} integers \\
+\eea
+The mastery problem I was given:\newline
+
+Find the Fourier Series for $f(x)=|x|$ on [-3,3]\newline
+
+Since we are on $[-L,L]$, the Fourier Series will have the form:
+\bea
+f(x) &\approx& \dfrac{a_0}{2}+\sum_{k=1}^{\infty} a_kcos(\dfrac{k \pi x}{L})+b_ksin(\dfrac{k \pi x}{L}) \\
+\eea
+
+Solve for $a_k$:
+\bea
+a_k &=& \dfrac{1}{3}\int_{-3}^{3} |x|cos(\dfrac{k \pi x}{3})dx\\
+a_k &=& \dfrac{6(\pi k sin(\pi k)+cos(\pi k) -1)}{\pi^2 k^2}\\
+\eea
+
+$a_k$ can be simplified to the following because $sin(\pi k)$ is always 0 and $cos(\pi k)$ is $(-1)^k$:
+\bea
+a_k &=& \dfrac{6((-1)^k-1)}{\pi^2 k^2}\\
+\eea
+
+Solve for $b_k$:
+\bea
+b_k &=& \dfrac{1}{3}\int_{-3}^{3} |x|sin(\dfrac{k \pi x}{3})dx\\
+b_k &=& 0
+\eea
+
+$b_k$ = 0 because the inner product of an even and an odd function is always 0.\newline 
+
+Now that we have $a_k$ and $b_k$ did we make any assumptions that are easy to overlook?\newline
+
+When solving for $a_k$ we assumed that k was not equal to 0. If k = 0 then we are left with:
+\bea
+a_0 &=& \dfrac{1}{3}\int_{-3}^{3} |x|dx\\
+a_0 &=& 3
+\eea
+
+The Fourier Series for $f(x) = |x|$ on [-3,3] looks like:
+\bea
+f(x) &\approx& \dfrac{3}{2}+\sum_{k=1}^{\infty} \dfrac{6((-1)^k-1)}{\pi^2 k^2}cos(\dfrac{k \pi x}{3}) \\
+\eea
+
 \subsection{Complex Fourier Series}
-\blue{Explain how to calculate the complex Fourier series for a suitable function. Then present the example that you solved for your mastery check.}
+%\blue{Explain how to calculate the complex Fourier series for a suitable function. Then present the example that you solved for your mastery check.}
+A Complex Fourier Series has the form:
+\bea
+f(x) &\approx& \sum_{k=1}^{\infty} C_ke^{ikx} \\
+\eea
+where:
+\bea
+C_k &=& <f(x),e^{ikx}> = \dfrac{1}{2\pi}\int_{-\pi}^{\pi} f(x)e^{-ikx}dx \\
+\eea
+The mastery problem I was given: \newline
+
+Find the Complex Fourier Series for $f(x) = sin^3(x)+cos^2(5x)$ on $[-\pi,\pi]$
+
+Solve for $C_k$:
+\bea
+C_k &=& \dfrac{1}{2\pi}\int_{-\pi}^{\pi} (sin^3(x)+cos^2(5x))e^{-ikx}dx\\
+C_k &=& (\dfrac{1}{2\pi})(\dfrac{ie^{10ix-ikx}}{4(k-10)} + \dfrac{ie^{-10ix-ikx}}{4(k+10)} + \dfrac{ie^{-ikx}}{2k} + \dfrac{e^{i(3-k)x}}{8(3-x)} - \dfrac{e^{i(-3-k)x}}{8(-k-3)} - \dfrac{3e^{i(1-k)x}}{8(1-k)} + \dfrac{3e^{i(-1-k)x}}{8(-k-1)})
+\eea
+
+What did we miss when solving for $C_k$?\newline
+
+The denominator tells us that we assumed k was not equal to -10,10,0,-3,3,-1, 1\newline
+
+Solve for $C_k$ when k = -10,10,0,-3,3,-1,1 - don't forget to divide by $2\pi$ for each integral:\newline
+
+\bea
+C_{-10} &=& \dfrac{1}{4} \\
+C_10 &=& \dfrac{1}{4} \\
+C_0 &=& \pi \\
+C_{-3} &=& \dfrac{-i}{8} \\
+C_3 &=& \dfrac{i}{8}\\
+C_{-1} &=& \dfrac{3i}{8} \\
+C_1 &=& \dfrac{-3i}{8}\\
+\eea
+
+The complex Fourier Series for $f(x) = sin^3(x)+cos^2(5x)$ on $[-\pi,\pi]$ looks like:
+\bea
+f(x) &\approx& (\dfrac{1}{2}+\pi) + \sum_{k=1}^{\infty} C_ke^{ikx} \\
+\eea
+
+where:
+\bea
+C_k &=& (\dfrac{1}{2\pi})(\dfrac{ie^{10ix-ikx}}{4(k-10)} + \dfrac{ie^{-10ix-ikx}}{4(k+10)} + \dfrac{ie^{-ikx}}{2k} + \dfrac{e^{i(3-k)x}}{8(3-x)} - \dfrac{e^{i(-3-k)x}}{8(-k-3)} - \dfrac{3e^{i(1-k)x}}{8(1-k)} + \dfrac{3e^{i(-1-k)x}}{8(-k-1)}) \\
+\eea
+
+
 \subsection{Convergence of Fourier Series}
 \red{Discuss the convergence of Fourier series. Then present the example that you solved for your mastery check.}
 \subsection{Integrability and Differentiability of Fourier Series}
