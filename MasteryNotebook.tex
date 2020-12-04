@@ -113,13 +113,13 @@
 \multirow{2}{5cm}{NM: Neumann stability} &\multirow{2}{1.5cm}{Wk 6}&&& \multirow{2}{.4cm}{\unchecked} \\ &&&& \\ \cline{1-4}
 \multirow{2}{5cm}{NM: CFL condition} &\multirow{2}{1.5cm}{Wk 6} & 10/22/20 & date here &  \multirow{2}{.4cm}{\unchecked} \\ &&&& \\ \cline{1-4}
 \multirow{2}{5cm}{NM: Implicit Difference} &\multirow{2}{1.5cm}{Wk 6}&&& \multirow{2}{.4cm}{\unchecked} \\ &&&& \\ \cline{1-4}
-\multirow{2}{5cm}{FS: Real Fourier Series} & \multirow{2}{1.5cm}{Wk 7}  & 10/29/20 & date here &  \multirow{2}{.4cm}{\unchecked} \\ &&&& \\ \cline{1-4}
-\multirow{2}{5cm}{FS: Complex Fourier Series} & \multirow{2}{1.5cm}{Wk 7} & 11/6/20 & date here & \multirow{2}{.4cm}{\unchecked} \\ &&&& \\ \cline{1-4}
+\multirow{2}{5cm}{FS: Real Fourier Series} & \multirow{2}{1.5cm}{Wk 7}  & 10/29/20 & 12/1/20 &  \multirow{2}{.4cm}{\unchecked} \\ &&&& \\ \cline{1-4}
+\multirow{2}{5cm}{FS: Complex Fourier Series} & \multirow{2}{1.5cm}{Wk 7} & 11/6/20 & 12/1/20 & \multirow{2}{.4cm}{\unchecked} \\ &&&& \\ \cline{1-4}
 \multirow{2}{7cm}{FS: Convergence of Fourier Series} & \multirow{2}{1.5cm}{Wk 8} &&& \multirow{2}{.4cm}{\unchecked} \\ &&&& \\  \cline{1-4}
 \multirow{2}{7cm}{FS: Integrability \& Differentiability of FS} & \multirow{2}{1.5cm}{Wk 8} & 11/13/20 & date here & \multirow{2}{.4cm}{\unchecked} \\ &&&& \\  \cline{1-4}
 \multirow{2}{5cm}{FS: Boundary Conditions} & \multirow{2}{1.5cm}{Wk 9} &&& \multirow{2}{.4cm}{\unchecked} \\ &&&& \\ \cline{1-4}
-\multirow{2}{5cm}{SV: Heat Equation} & \multirow{2}{1.5cm}{Wk 10} & 11/19/20 & date here & \multirow{2}{.4cm}{\unchecked} \\ &&&& \\ \cline{1-4}
-\multirow{2}{5cm}{SV: Equilibrium behavior} & \multirow{2}{1.5cm}{Wk 10} & 11/20/20 & date here & \multirow{2}{.4cm}{\unchecked} \\ &&&& \\ \cline{1-4}
+\multirow{2}{5cm}{SV: Heat Equation} & \multirow{2}{1.5cm}{Wk 10} & 11/19/20 & 12/3/20 & \multirow{2}{.4cm}{\unchecked} \\ &&&& \\ \cline{1-4}
+\multirow{2}{5cm}{SV: Equilibrium behavior} & \multirow{2}{1.5cm}{Wk 10} & 11/20/20 & 12/3/20 & \multirow{2}{.4cm}{\unchecked} \\ &&&& \\ \cline{1-4}
 \multirow{2}{5cm}{SV: Wave equation} & \multirow{2}{1.5cm}{Wk 11} & need & date here & \multirow{2}{.4cm}{\checked} \\ &&&& \\ \cline{1-4}
 \multirow{2}{5cm}{SV: d'Alembert's equation} & \multirow{2}{1.5cm}{Wk 12} &&& \multirow{2}{.4cm}{\unchecked} \\ &&&& \\ \cline{1-4}
 \multirow{2}{5cm}{SV: Laplace equation} & \multirow{2}{1.5cm}{Wk 13} &&& \multirow{2}{.4cm}{\unchecked} \\ &&&& \\ \cline{1-4}
@@ -131,8 +131,8 @@
 \red{Give a brief overview of this section of the class. The following would be a sample introduction to such a section from an ordinary differential equations class.}
 % Don't forget to delete all of the commentary and sample code before you submit this as your Mastery Notebook.
 
-A first order initial value problem takes the form \(\ds \d{y}{t} = f(y,t)\) with \(\ds y(t_0)=y_0\). Such functions are studied in a first class on differential equations in a variety of special cases (e.g. separable equations or linear
-equations) but there is no general analytic method that works for every \(f\). We shall explore some numerical methods of finding a solution.
+%A first order initial value problem takes the form \(\ds \d{y}{t} = f(y,t)\) with \(\ds y(t_0)=y_0\). Such functions are studied in a first class on differential equations in a variety of special cases (e.g. separable equations or linearequations) but there is no general analytic method that works for every \(f\). We shall explore some numerical methods of finding a solution.
+
 \subsection{Order of Error}
 %\blue{Explain how you calculate the order of the error in a finite difference approximation scheme here. You should illustrate your explanation by solving at least the problem I gave you to demonstrate mastery. If you wish to include others as well that is up to you. What follows is a sample bit of text discussing the order of the error for the Euler Method of solving ODEs.} \newline
 
@@ -198,7 +198,8 @@ The order of error is h
 % precision due to rounding.
 
 \subsection{Neumann Stability}
-\red{Explain the idea and solve the mastery problem that I gave you.}
+%\red{Explain the idea and solve the mastery problem that I gave you.}
+
  \subsection{The CFL Condition}
 \blue{Explain the idea and solve the mastery problem that I gave you.}
  mention if not straight lines
@@ -258,16 +259,17 @@ The order of error is h
 % \end{verbatim}
 
 \subsection{Implementing an Implicit Difference Method}
-\blue{Explain what an implicit difference method is. Then present the sample problem from the text, with its solution and the sample problem you solved with me for mastery with its solution. Include your code here with clear explanations of what values must be changed to solve the two different problems.
-What follows is a sample using a block quotation and reference.}
-J. D. Lambert described the phenomenon of stiffness for a system of
-differential equations as follows:
-\begin{quote} If a numerical method with a finite region of absolute stability,
-    applied to a system with any initial conditions, is forced to use in a
-    certain interval of integration a steplength which is excessively small in
-    relation to the smoothness of the exact solution in that interval, then the
-    system is said to be stiff in that interval. \cite{wikistiff}
-    \end{quote}
+%\blue{Explain what an implicit difference method is. Then present the sample problem from the text, with its solution and the sample problem you solved with me for mastery with its solution. Include your code here with clear explanations of what values must be changed to solve the two different problems.
+%What follows is a sample using a block quotation and reference.}
+%J. D. Lambert described the phenomenon of stiffness for a system of
+%differential equations as follows:
+%\begin{quote} If a numerical method with a finite region of absolute stability,
+%    applied to a system with any initial conditions, is forced to use in a
+%    certain interval of integration a steplength which is excessively small in
+%    relation to the smoothness of the exact solution in that interval, then the
+%    system is said to be stiff in that interval. \cite{wikistiff}
+%    \end{quote}
+    
     
 \section{The Method of Characteristics}
 %\red{Give an introduction to the method of characteristics.}
@@ -365,21 +367,23 @@ In this case, there is nothing more to add on at the end because the given funct
 
 \subsection{Solving first order nonlinear PDEs using the method of characteristics}
 
-\blue{Explain how to solve a problem of the form $u_t+g(u)u_x=0$. Then solve the mastery problem I gave you to solve. What follows is a sample use of equation array and piecewise defined functions.}
+%\blue{Explain how to solve a problem of the form $u_t+g(u)u_x=0$. Then solve the mastery problem I gave you to solve. What follows is a sample use of equation array and piecewise defined functions.}
   \bea
-y_{n+1} &=& y_n+\red{e} + \Delta t \lambda y_{n+1} \\
-\left(1-\Delta t
-\lambda\right)^ny_{n+1} &=& y_n+\red{e} \\
-y_{n+1} &=& \left(\frac{1}{1-\Delta t \lambda}\right)(y_n+\red{e}) \\
-y_{n+1} &=& \left(\frac{1}{1-\Delta t \lambda}\right)^{n+1}(y_0+\red{e}) 
-\eea
-and hence a global error after $N$ steps of
-$$E = \left(\frac{1}{1-\Delta t \lambda}\right)^N\red{e}.$$ Therefore
-$$\lim_{N\to \infty} E = \begin{cases} \infty & 
-  |1-\Delta t \lambda|<1 \\
- 0 &  |1-\Delta t \lambda|>1 \\
-  \red{e} & |1-\Delta t \lambda|=1
-  \end{cases}.$$
+%y_{n+1} &=& y_n+\red{e} + \Delta t \lambda y_{n+1} \\
+%\left(1-\Delta t
+%\lambda\right)^ny_{n+1} &=& y_n+\red{e} \\
+%y_{n+1} &=& \left(\frac{1}{1-\Delta t \lambda}\right)(y_n+\red{e}) \\
+%y_{n+1} &=& \left(\frac{1}{1-\Delta t \lambda}\right)^{n+1}(y_0+\red{e}) 
+%\eea
+%and hence a global error after $N$ steps of
+%$$E = \left(\frac{1}{1-\Delta t \lambda}\right)^N\red{e}.$$ Therefore
+%$$\lim_{N\to \infty} E = \begin{cases} \infty & 
+%  |1-\Delta t \lambda|<1 \\
+% 0 &  |1-\Delta t \lambda|>1 \\
+%  \red{e} & |1-\Delta t \lambda|=1
+%  \end{cases}.$$
+
+
 \subsection{Shocks}
 \red{Explain how to recognize and solve a first order differential equation whose solution will involve a shock. Then solve the mastery problem I gave you. What follows is sample code for including a figure, Figure~\ref{fig:example}, with a caption and label.}
 \begin{figure}[ht]
@@ -390,17 +394,18 @@ $$\lim_{N\to \infty} E = \begin{cases} \infty &
   convergent and white is divergent. \label{fig:example}}
 \end{figure}
 \subsection{Rarefaction Waves}
-\blue{Explain how to recognize and solve a first order differential equation that will result in a rarefaction wave. Then solve the mastery problem I gave you. What follows is sample code for a table. I have left some horizontal and vertical lines out for demonstration purposes, and doubled others.}
-\begin{center}
-\begin{tabular}{|l|ccc|} \hline
-\textbf{Command} & \textbf{Local Error} & \textbf{Global Error} & \textbf{Scheme} \\ \hline \hline  
-  \texttt{ode23} & $O(\Delta t^3)$ & $O(\Delta t^2)$ & Runge-Kutta\\
-  \texttt{ode45} & $O(\Delta t^5)$ & $O(\Delta t^4)$ & Runge-Kutta \\ \hline
-  \texttt{ode15s} & variable  & variable & Gear's method, stiff\\
-  \texttt{ode113} & variable & variable & predictor/corrector \\ \hline
-  \end{tabular}
-  \end{center}
-For more information, see the Matlab documentation \cite{matlabode}.
+%\blue{Explain how to recognize and solve a first order differential equation that will result in a rarefaction wave. Then solve the mastery problem I gave you. What follows is sample code for a table. I have left some horizontal and vertical lines out for demonstration purposes, and doubled others.}
+%\begin{center}
+%\begin{tabular}{|l|ccc|} \hline
+%\textbf{Command} & \textbf{Local Error} & \textbf{Global Error} & %\textbf{Scheme} \\ \hline \hline  
+%  \texttt{ode23} & $O(\Delta t^3)$ & $O(\Delta t^2)$ & Runge-Kutta\\
+%  \texttt{ode45} & $O(\Delta t^5)$ & $O(\Delta t^4)$ & Runge-Kutta \\ \hline
+%  \texttt{ode15s} & variable  & variable & Gear's method, stiff\\
+%  \texttt{ode113} & variable & variable & predictor/corrector \\ \hline
+%  \end{tabular}
+%  \end{center}
+%For more information, see the Matlab documentation \cite{matlabode}.
+
 \section{Fourier Series}
 %\blue{Give an introduction to Fourier series.}
 Fourier series approximate functions with an infinite series of sines and cosines. They can be used to approximate real functions and complex functions. A complex Fourier Series can be written in terms of exponentials or sines and cosines because of their relationship for complex functions but will still be an infinite series. \newline
@@ -473,7 +478,7 @@ A Complex Fourier Series has the form:
 \bea
 f(x) &\approx& \sum_{k=1}^{\infty} C_ke^{ikx} \\
 \eea
-where:
+where $C_k$ is the Hermitian inner product of $f(x)$ and $e^{ikx}$. This means we need the conjugate of $e^{ikx}$ when doing the integral for the inner product.
 \bea
 C_k &=& <f(x),e^{ikx}> = \dfrac{1}{2\pi}\int_{-\pi}^{\pi} f(x)e^{-ikx}dx \\
 \eea
@@ -515,23 +520,254 @@ C_k &=& (\dfrac{1}{2\pi})(\dfrac{ie^{10ix-ikx}}{4(k-10)} + \dfrac{ie^{-10ix-ikx}
 
 
 \subsection{Convergence of Fourier Series}
-\red{Discuss the convergence of Fourier series. Then present the example that you solved for your mastery check.}
+%\red{Discuss the convergence of Fourier series. Then present the example that you solved for your mastery check.}
+
 \subsection{Integrability and Differentiability of Fourier Series}
-\blue{Discuss the integrability and differentiability of Fourier series. Then present the example that you solved for your mastery check.}
+%\blue{Discuss the integrability and differentiability of Fourier series. Then present the example that you solved for your mastery check.}
+
 \subsection{Boundary Conditions}
-\red{Discuss the various standard types of boundary conditions and what conditions tell you about the form of a Fourier Series solution. Then present the example that you solved for your mastery check.}
+%\red{Discuss the various standard types of boundary conditions and what conditions tell you about the form of a Fourier Series solution. Then present the example that you solved for your mastery check.}
+
 \section{Separation of Variables}
-\red{Give an overview of the method of separation of variables.}
+%\red{Give an overview of the method of separation of variables.}
+Separation of Variables assumes the solution to a PDE can take the form of the product of two functions w(t) and v(x). Therefore, u(t,x) = w(t)v(x). We will use separation of variables to solve heat equations, wave equations, and Laplace equations and see what the solutions for w(t), v(x), and u(t,x) look like in each case. We can also use this idea to see what the equilibrium solution for a u(t,x) looks like. 
 \subsection{Equilibrium behavior of a solution}
-\red{Explain what equilibrium behavior is and how one goes about finding the equilibrium behavior of a system. Then give the example that you solved for your mastery check.}
+%\red{Explain what equilibrium behavior is and how one goes about finding the equilibrium behavior of a system. Then give the example that you solved for your mastery check.}
+
+Equilibrium behavior for a solution u(t,x) is what is happening with the solution at $t=\infty$. Equilibrium solutions are independent of t at the end so we will only have a function of x. \newline
+The Mastery problem I was given: 
+
+Find the equilibrium solution for the heat equation:
+\bea
+u_t &=& .005 u_{xx} \\
+given \\
+u(0,x) &=& f(x) \\
+u(t,0) &=& 6 \\
+u(t,5) &=& -3 \\
+\eea
+Note: An equilibrium solution for a heat equation would be a temperature. For it to be an equilibrium solution, the behavior would have to approach an actual value.\newline
+
+If an equilibrium solution exists, it will take the form:
+\bea
+u^{\star}(x) = \lim_{t\to\infty} u(t,x) 
+\eea
+
+Since our heat equation has $u_t$ and $u_{xx}$ lets find those for $u^{\star}(x)$:
+\bea
+\frac{\partial u^{\star} }{\partial t} &=& 0 \\
+\eea
+This is because $u^{\star}$ doesn't depend on t at all
+\bea
+\frac{\partial u^{\star} }{\partial x} &=& (u^{\star})'' \\
+\eea
+
+Plug in to heat equation to get the form of it:
+\bea
+0 &=& .005(u^{\star})''
+\eea
+
+Tells us that $u^{\star}(x)$ looks like:
+\bea
+u^{\star}(x) = Ax + B
+\eea
+
+$u^{\star}(x)$ looks like this because we want the second derivative of $u^{\star}$ to equal 0 so $u^{\star}(x)$ needs to have this form. 
+
+We can find A and B using initial conditions:
+
+We know:
+\bea
+u^{\star}(0) &=& 6 \\
+u^{\star}(5) &=& -3 \\
+\eea
+
+Solve for A and B:
+\bea
+A(0) + B &=& 6\\
+B &=& 6 \\
+A(5) + 6 &=& -3 \\
+A &=& -\dfrac{9}{5} \\
+\eea
+
+The equilibrium solution for the given heat equation looks like:
+\bea
+u^{\star}(x)=-\dfrac{9}{5}(x) + 6
+\eea
+
+Note: If we the equilibrium solution to give us an actual value for a certain x, it limits what the 2nd order diff eq's can be to only ones where $u^{\star}$ works out nicely. Tthe equilibrium solution could be a cycle or something but we are not interested in when that would be the case. 
+
 \subsection{Solving the 1D heat equation}
-\blue{Explain how to solve the 1D heat equation with boundary conditions using the method of separation of variables. Then present the example that you solved for your mastery check.}
+%\blue{Explain how to solve the 1D heat equation with boundary conditions using the method of separation of variables. Then present the example that you solved for your mastery check.}
+The heat equation is $u_t = \gamma u_{xx}$
+
+Assume the solution looks like u(t,x) = w(t)v(x)
+
+We found that:
+\bea
+\dfrac{\partial u}{\partial t} &=& w'(t)v(x) \\
+\dfrac{\partial u}{\partial x} &=& \gamma w(t)v''(x) \\
+w'(t)v(x) &=& \gamma w(t)v''(x) \\
+\dfrac{w'(t)}{w(t)} &=& \gamma \dfrac{v''(x)}{v(x)} = constant = -\lambda
+\eea
+
+This is constant because the only thing that can be both a function of t a function of x is a constant. We don't have to call it -$\lambda$, it could have been $\lambda$ if we wanted but it would change the way that the different cases for $\lambda$ look \newline
+
+We now have a system or first order normal differential equations that we can use to find the solution:
+\bea
+w'(t) &=& -\lambda w(t) \\
+v''(x) &=& \dfrac{-\lambda}{\gamma}v(x) \\
+\eea
+
+We know $u(t,x) = w(t)v(x)$ and we assume that $w(t)$ is not always 0, which means we can divide by it.
+
+Therefore, v(x)=0 when w(t) $\neq$ 0 \newline
+
+The mastery problem I was given: \newline
+
+Find $u(t,x)$ for $u_t=.3u_{xx}$
+
+given:
+\bea
+u(0,x)&=&cos(\dfrac{\pi}{4}x) \\
+u(0,x)&=&x^2-8x\\
+u_x(t,0)&=&0\\
+u_x(t,4)&=&0\\
+\eea
+Note: $\gamma=.3$ - that's gamma \newline
+Note: This problem has Nuemann (not Dirichlet) boundary conditions because they prescribe the derivative (not the function value) at the boundary. When doing the 3 cases for $\lambda$ we need to solve $v'(0)=0$ and $v'(0)=4$ not $v(0)=0$ and $v(0)=4$\newline
+
+We know the solutions for $w(t)=Ce^{-\lambda t}$ \\
+
+We know the solutions for $v(x)$ will fall into 3 cases depending on if $\lambda > 0$, $\lambda < 0$, or $\lambda = 0$, \newline
+Case 1: $\lambda$ = 0 
+\bea
+v(x) &=& Ax+B\\
+v'(x) &=& A\\
+\eea
+
+Use 1st boundary condition:
+\bea
+v'(0) &=& 0 = A\\
+A &=& 0
+\eea
+
+Use 2nd boundary condition:
+\bea
+v'(4) &=& 0 = A\\
+A &=& 0
+\eea
+
+Tells us that A = 0 and B is unconstrained.\newline
+Case 2: $\lambda > 0$ This will mean $\omega=\sqrt{\dfrac{\lambda}{\gamma}}$
+\bea
+v(x) &=& Acos(\omega x)+Bsin(\omega x) \\
+v'(x) &=& -A\omega sin(\omega x)+B\omega cos(\omega x)  \\
+\eea
+
+Use 1st boundary condition:
+\bea
+v'(0) &=& 0 = B\omega\\
+B &=& 0
+\eea
+
+Use 2nd boundary condition: B = 0 so not in v'(x) anymore.
+\bea
+v'(4) &=& 0 = -Asin(\omega 4)\\
+\eea
+
+$-Asin(\omega 4)$ equals 0 when $\omega = \dfrac{k\pi}{4}$ \newline
+Case 3: $\lambda < 0$ This will mean $\omega=\sqrt{\dfrac{-\lambda}{\gamma}}$
+\bea
+v(x) &=& Acosh(\omega x)+Bsinh(\omega x) \\
+v'(x) &=& B\omega cosh(\omega x)+A\omega sinh(\omega x)  \\
+\eea
+
+Use 1st boundary condition: \newline
+Note: sinh(0) = 0 and cosh(0) = 1
+\bea
+v'(0) &=& 0 = B\omega\\
+B &=& 0
+\eea
+
+Use 2nd boundary condition: B = 0 so not in v'(x) anymore.
+\bea
+v'(4) &=& 0 = -Asinh(\omega 4)\\
+\eea
+
+Either:
+\bea
+A &=& 0 \\
+or\\
+\omega &=& 0 \\
+or\\
+sinh(\omega 4) &=& 0
+\eea
+
+We know $\omega$ is positive so it can't equal 0\newline 
+
+$sinh(\omega 4)$ equals 0 when evaluated at 0. However, we know that $\omega$ is positive so this can't happen \newline
+
+So A = 0 which makes this case trivial because both A = 0 and B = 0 \newline 
+
+Put back together:
+
+$v(x) = B$ with $\lambda=0$\newline 
+
+$v(x) = B + Acos(\dfrac{k \pi x}{L})$ with $\lambda > 0$.  This is because we found that B = 0 when we solved and that $v(x)$ still equals $Acos(\omega x)+Bsin(\omega x)$  \newline
+
+w(t)=$Ce^{-\lambda t}$:
+
+w(t) = constant with  $\lambda = 0$
+
+w(t) =$Ce^{\dfrac{-k^2 \pi^2 \gamma }{L^2}t}$ with $\lambda > 0$
+
+Note: \bea
+\omega= \dfrac{k \pi}{L} &=& \sqrt{\dfrac{\lambda}{\gamma}} \\
+\lambda &=& \dfrac{k^2 \pi^2 \gamma }{L^2} \\
+\eea
+
+$u(t,x) = w(t)v(x)$
+
+$u(t,x) = a_0e^{\dfrac{-k^2 \pi^2 \gamma }{L^2}t} + \sum_{k=1}^{\infty} a_k e^{\dfrac{-k^2 \pi^2 \gamma }{L^2}t} cos(\dfrac{k \pi x}{4})$ \\ 
+
+Replaced B with $a_0$ and the C*A inside the sum with $a_k$ to make it look more like a Fourier Series. 
+
+We can still use $u(0,x)=x^2-8x$ as piece of information we haven't used.
+
+$u(0,x)=x^2-8x$ = $a_0 + \sum_{k=1}^{\infty} a_k cos(\dfrac{k \pi x}{4})$ 
+
+This looks like a Fourier Cosine Series for f(x) on [0,4].
+
+We want a Cosine Series on [-L,L]. So use an even extension (because cosine is an even function) to get $a_0$ and $a_k$:
+
+\bea
+a_0 &=& \dfrac{1}{L}\int_{0}^{L} f(x)dx \\
+a_k &=& \dfrac{2}{L}\int_{0}^{L} f(x)cos(\dfrac{k \pi x}{L})dx \\
+where \\
+L&=&4\\
+f(x) &=& x^2-8x
+\eea
+
+$a_0$ = -10.667
+
+$a_k = -\dfrac{32((\pi^2 k^2 +2)sin(k \pi) - 2 \pi k)}{\pi^3 k ^3}$
+
+$a_k = \dfrac{64 \pi k}{\pi^3 k ^3}$ because $sin(k\pi) = 0$ \newline
+
+
+$u(t,x) = -10.667e^{\dfrac{-k^2 \pi^2 .3 }{4^2}t} + \sum_{k=1}^{\infty} (\dfrac{64 \pi k}{\pi^3 k ^3}) e^{\dfrac{-k^2 \pi^2 .3 }{4^2}t} cos(\dfrac{k \pi x}{4})$ \\ 
+
+
 \subsection{Solving the Laplace equation}
-\red{Explain how to solve the Laplace equation with boundary conditions using the method of separation of variables. Then present the example that you solved for your mastery check.}
+%\red{Explain how to solve the Laplace equation with boundary conditions using the method of separation of variables. Then present the example that you solved for your mastery check.}
+ 
+
+
 \subsection{Solving the 1D wave equation}
-\red{Explain how to solve the 1D wave equation with boundary conditions using the method of separation of variables. Then present the example that you solved for your mastery check.}
+%\red{Explain how to solve the 1D wave equation with boundary conditions using the method of separation of variables. Then present the example that you solved for your mastery check.}
+
 \subsection{Solving the 1D wave equation using d'Alembert's formula}
-\red{Explain how to solve the 1D wave equation with boundary conditions using d'Alembert's formula. Then present the example that you solved for your mastery check.}
+%\red{Explain how to solve the 1D wave equation with boundary conditions using d'Alembert's formula. Then present the example that you solved for your mastery check.}
 %\section{Bibliography}
 \begin{bibdiv}
 \begin{biblist}
