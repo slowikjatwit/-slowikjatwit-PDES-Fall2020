@@ -622,7 +622,7 @@ Plug in to heat equation to get the form of it:
 0 &=& .005(u^{\star})''
 \eea
 
-Tells us that $u^{\star}(x)$ looks like:
+This tells us that $u^{\star}(x)$ looks like:
 \bea
 u^{\star}(x) = Ax + B
 \eea
@@ -631,7 +631,7 @@ $u^{\star}(x)$ looks like this because we want the second derivative of $u^{\sta
 
 We can find A and B using initial conditions:
 
-We know:
+We know that:
 \bea
 u^{\star}(0) &=& 6 \\
 u^{\star}(5) &=& -3 \\
@@ -685,24 +685,24 @@ u_x(t,0)&=&0\\
 u_x(t,4)&=&0\\
 \eea
 Note: $\gamma=.3$ - that's gamma \newline
-Note: This problem has Neumann (not Dirichlet) boundary conditions because they prescribe the derivative (not the function value) at the boundary. When doing the 3 cases for $\lambda$ we need to solve $v'(0)=0$ and $v'(0)=4$ not $v(0)=0$ and $v(0)=4$\newline
+Note: This problem has Neumann (not Dirichlet) boundary conditions because they prescribe the derivative (not the function value) at the boundary. When doing the 3 cases for $\lambda$ we need to solve $v'(0)=0$ and $v'(0)=4$ not $v(0)=0$ and $v(0)=4$.\newline
 
-We know the solutions for $w(t)=Ce^{-\lambda t}$ \\
+We know the solutions for $w(t)=Ce^{-\lambda t}$. \\
 
-We know the solutions for $v(x)$ will fall into 3 cases depending on if $\lambda > 0$, $\lambda < 0$, or $\lambda = 0$, \newline
+We know the solutions for $v(x)$ will fall into 3 cases depending on if $\lambda > 0$, $\lambda < 0$, or $\lambda = 0$. \newline
 Case 1: $\lambda$ = 0 
 \bea
 v(x) &=& Ax+B\\
 v'(x) &=& A\\
 \eea
 
-Use 1st boundary condition:
+Use the 1st boundary condition:
 \bea
 v'(0) &=& 0 = A\\
 A &=& 0
 \eea
 
-Use 2nd boundary condition:
+Use the 2nd boundary condition:
 \bea
 v'(4) &=& 0 = A\\
 A &=& 0
@@ -715,32 +715,32 @@ v(x) &=& A\cos(\omega x)+B\sin(\omega x) \\
 v'(x) &=& -A\omega \sin(\omega x)+B\omega \cos(\omega x)  \\
 \eea
 
-Use 1st boundary condition:
+Use the 1st boundary condition:
 \bea
 v'(0) &=& 0 = B\omega\\
 B &=& 0
 \eea
 
-Use 2nd boundary condition: B = 0 so it's not in $v'(x)$ anymore.
+Use the 2nd boundary condition: B = 0 so it's not in $v'(x)$ anymore.
 \bea
 v'(4) &=& 0 = -A\sin(\omega 4)\\
 \eea
 
-$-A\sin(\omega 4)$ equals 0 when $\omega = \dfrac{k\pi}{4}$ \newline
+$-A\sin(\omega 4)$ equals 0 when $\omega = \dfrac{k\pi}{4}$. \newline
 Case 3: $\lambda < 0$ This will mean $\omega=\sqrt{\dfrac{-\lambda}{\gamma}}$
 \bea
 v(x) &=& A\cosh(\omega x)+B\sinh(\omega x) \\
 v'(x) &=& B\omega \cosh(\omega x)+A\omega \sinh(\omega x)  \\
 \eea
 
-Use 1st boundary condition: \newline
+Use the 1st boundary condition: \newline
 Note: sinh(0) = 0 and cosh(0) = 1
 \bea
 v'(0) &=& 0 = B\omega\\
 B &=& 0
 \eea
 
-Use 2nd boundary condition: B = 0 so it's not in $v'(x)$ anymore.
+Use the 2nd boundary condition: B = 0 so it's not in $v'(x)$ anymore.
 \bea
 v'(4) &=& 0 = -A\sinh(\omega 4)\\
 \eea
@@ -754,7 +754,7 @@ or\\
 \sinh(\omega 4) &=& 0
 \eea
 
-We know $\omega$ is positive so it can't equal 0\newline 
+We know $\omega$ is positive so it can't equal 0.\newline 
 
 $\sinh(\omega 4)$ equals 0 when evaluated at 0. However, we know that $\omega$ is positive so this can't happen. \newline
 
@@ -783,13 +783,13 @@ $u(t,x) = w(t)v(x)$
 
 $u(t,x) = a_0 + \sum_{k=1}^{\infty} a_k e^{\dfrac{-k^2 \pi^2 \gamma }{L^2}t} \cos\left(\frac{k \pi x}{4}\right)$ \\ 
 
-Replaced B with $a_0$ and the C*A inside the sum with $a_k$ to make it look more like a Fourier Series. \\
+I replaced B with $a_0$ and the C*A inside the sum with $a_k$ to make it look more like a Fourier Series. \\
 
 We can still use $u(0,x)=x^2-8x$ as piece of information we haven't used.\\
 
 $u(0,x)=x^2-8x$ = $a_0 + \sum_{k=1}^{\infty} a_k \cos\left(\frac{k \pi x}{4}\right)$ \\
 
-This looks like a Fourier Cosine Series for f(x) on [0,4]. We want a Cosine Series on [-L,L]. So use an even extension (because cosine is an even function) to get $a_0$ and $a_k$:
+This looks like a Fourier Cosine Series for f(x) on [0,4]. We want a Cosine Series on [-L,L]. We can use an even extension (because cosine is an even function) to get $a_0$ and $a_k$:
 
 \bea
 a_0 &=& \dfrac{1}{L}\int_{0}^{L} f(x)dx \\
