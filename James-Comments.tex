@@ -1,0 +1,144 @@
+\documentclass{article}
+\usepackage{fullpage, color, amsmath}
+
+\def\der#1#2{\frac{\partial #1}{\partial #2}} % partial derivatives
+\def\d#1#2{\frac{d#1}{d#2}} % standard derivatives
+\def\ds{\displaystyle}
+\newcommand{\bea}{\begin{eqnarray*}}
+\newcommand{\eea}{\end{eqnarray*}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+
+\begin{document}
+\title{Comments}
+\author{Prof. Zbarsky}
+\section{New Comments, December 18, 1:05 am}
+\subsection{CFL}
+Looks better.
+
+\subsection{Method of Characteristics: Constant Coefficients}
+Looks better.
+\subsection{Fourier Series: Complex}
+\red{No mastery credit yet.} \begin{itemize}
+\item The definition of a complex Fourier series at the very beginning of this section is incorrect. What are the appropriate bounds on the summation? 
+\item You are doing just fine with your calculation, though, up until you discuss the roots of your denominator. At that point, you seem to just forget two of the roots. Please put them back in and remember to calculate the relevant $c_k$ values. 
+\item Also, the way that you are using the summations at the end is completely wrong. This may partially, but not entirely, relate to your original mistake. The fact that you are expressing things in terms of $k$ matters! If we write that $\ds c_{-3} = -\frac{i}{8}$, that means that the $k=-3$ term in the complex Fourier series is $\ds -\frac{i}{8}e^{-3ix}$.
+\end{itemize}
+\subsection{Heat Equation}
+Much better. 
+
+\red{\hrule}
+\section{Order of Error}
+A few comments, mostly typographical:
+\begin{itemize}
+\item You should probably delete (or at least comment out) the blue instructions in this section now that you have written up your own comments. And you should probably comment our (or delete) the other commentary that I have give you as examples, as well. 
+\item When you are moving from prose to displaystyle equations without ending a sentence you should usually transition with a colon, and then your equations should be formatted using eqnarray or eqnarray*, e.g. \\
+To calculate the order of the error, we first use a Taylor Series to expand each function used to approximate the derivative except $u(x)$:
+\bea
+u(x-3h) &=& u(x) - u'(x)(3h) + \dfrac{u''(x)(3h)^2}{2!} -  \dfrac{u'''(x)(3h)^3}{3!}+\ldots \\
+u(x-2h) &=& u(x) - u'(x)(2h) + \dfrac{u''(x)(2h)^2}{2!} - \dfrac{u'''(x)(2h)^3}{3!}+\ldots
+\eea
+\item If you want $\ldots$ (or $\cdots$) there are special commands for those. Please check the .tex form of these comments.
+\item It doesn't follow properly to write ``Now \ldots" with the next sentence beginning ``Next, \ldots" because you didn't actually \emph{do} anything in the `Now' sentence. I think you should consider replacing `Next' with `First' or `We shall begin by \ldots' or some such phrasing.
+\item Why is it that both of your statements $A+B=0$ and $8A+4B=0$ cannot be zero? For that matter, where did the $u''(x)$-associated term come from? What I see is the pair of equations \bea A+B &=& 0 \\ 9A+4B &=& 0 \eea which can certainly be simultaneously true (just not in a useful way for your problem here!). In order to make the system \emph{not} simultaneously solvable you have to include the coefficient for $u'(x)$ with something like $$u'(x): -3A-2B \neq 0.$$
+\item Please ensure you are writing in complete sentences.
+\end{itemize}
+\section{Numerical Methods: The CFL Condition}
+\begin{itemize}
+\item Headline: No mastery credit for this yet. Please fix the mathematics and resubmit.
+\item $t, x$ plane rather than t, x plane
+\item ``[\ldots] $u_{j+1,m}$---the time step of the solution we are interested in---as well." rather than ``[\ldots] $u_{j+1,m}$ - the time step of the solution we are interested in - as well."
+\item I love your picture of the region of numerical dependence!
+\item Don't forget your subscripts, and where did your right-hand inequality come from? You clearly wrote in your figure that the upper bound of your region was just $x_m$: \bea
+ x_{m}-2(j+1) \leq \xi \leq  x_{m}+(j+m)
+\eea should be \bea
+ x_{m-2(j+1)} \leq \xi \leq  x_{m}
+\eea
+\end{itemize}
+\section{Method of Characteristics: Constant Wave Speed}
+\begin{itemize}
+\item Headline: No mastery credit for this yet. Please fix the mathematics and resubmit.
+\item You want to use $\arctan(x)$ not $arctan(x)$. Also, if you are referring to a variable it should be $x$ not x.
+\item Don't forget to use complete sentences. e.g. ``First, let's consider what we know about $u(t,x)$ and $u(0,x)=f(x)$."
+\item ``First, solve the homogeneous case for $u(t,x)$, that is for $u_t-5u_x=0$."
+\item You want to write this like so: \[h = u(t,x(t)) = \mbox{constant}. \]
+\item It is called a total derivatative.
+\item Your final answer is incorrect. The function $h=12t+g(\xi)$ is correct, but the point is that $g(\xi)$ is the function you already know---the homogeneous solution. You must fix this.
+\end{itemize}
+\section{Method of Characteristics: Polynomial Wave Speed}
+\begin{itemize}
+\item Don't forget to use $\cos()$ and $\sin()$ and $\tan()$ and $\arctan()$ and $\ln()$ and so forth.
+\item When you want ``normal" text in math mode you should use mbox, as in \[h = u(t,x(t)) = \mbox{constant}. \]
+\item Also, please write in complete sentences. The math all looks good, though.
+\end{itemize}
+\section{Fourier series: Real}
+\begin{itemize}
+\item I expect you want $2L$ rather than 2L?
+\item Don't forget to use $\cos()$ and $\sin()$ and $\tan()$ and $\arctan()$ and $\ln()$ and so forth.
+\item You want to use left and right commands to ``right-size" the parentheses here:
+\bea
+a_k &=& <f(x),\cos(kx)> = \dfrac{1}{L}\int_{-L}^{L} f(x)\cos\left(\dfrac{k \pi x}{L}\right)dx, \hspace{.2in}  k\geq0 \hspace{.1in} \mbox{integers} \\
+b_k &=& <f(x),\sin(kx)> = \dfrac{1}{L}\int_{-L}^{L} f(x)\sin\left(\dfrac{k \pi x}{L}\right)dx, \hspace{.2in} k\geq1 \hspace{.1in} \mbox{integers} \\
+\eea
+\item Overall, good introduction for this one. This is the style you would like in general with sufficient detail to help you solve problems of this type.
+\item Please use complete sentences. 
+\item Did you check what the graph looks like? This is a very good place to support your work with a figure showing the graph of $|x|$ and the graph of the first 50-100 of the terms of the Fourier series you just computed. 
+\end{itemize}
+\section{Fourier series: Complex}
+\begin{itemize}
+\item Headline: No mastery credit for this yet. Please fix the mathematics and resubmit.
+\item Don't forget to use $\cos()$ and $\sin()$ and $\tan()$ and $\arctan()$ and $\ln()$ and so forth.
+\item By convention we use $c_k$ rather than $C_k$ for these coefficients.
+\item You want to use left and right commands to ``right-size" the parentheses here:
+\bea
+c_k &=& \dfrac{1}{2\pi}\int_{-\pi}^{\pi} \left(\sin^3(x)+\cos^2(5x)\right)e^{-ikx}dx\\
+c_k &=& \left(\dfrac{1}{2\pi}\right)\left(\dfrac{ie^{10ix-ikx}}{4(k-10)} + \dfrac{ie^{-10ix-ikx}}{4(k+10)} + \dfrac{ie^{-ikx}}{2k} + \dfrac{e^{i(3-k)x}}{8(3-x)} - \dfrac{e^{i(-3-k)x}}{8(-k-3)} - \dfrac{3e^{i(1-k)x}}{8(1-k)} + \dfrac{3e^{i(-1-k)x}}{8(-k-1)}\right)
+\eea
+\item Why is it immediately obvious to you given the presentation of $c_k$ given above that values of $c_k$ with $|k|\neq 0, 1, 3$ or $10$ are equal to 0? I do like that presentation to make it clear which values of $k$ need to be computed separately, but perhaps you want to give the expression in terms of a rational function times $\sin(\pi k)$ as well?  
+\item Don't forget your curly braces around superscripts and subscripts so you get $c_{10}$ rather than $c_10$
+\item I don't understand your final result at all. It is not tru that \[f(x) \sim (\dfrac{1}{2}+\pi) + \sum_{k=1}^{\infty} c_ke^{ikx} \] with \[ \left(\dfrac{1}{2\pi}\right)\left(\dfrac{ie^{10ix-ikx}}{4(k-10)} + \dfrac{ie^{-10ix-ikx}}{4(k+10)} + \dfrac{ie^{-ikx}}{2k} + \dfrac{e^{i(3-k)x}}{8(3-x)} - \dfrac{e^{i(-3-k)x}}{8(-k-3)} - \dfrac{3e^{i(1-k)x}}{8(1-k)} + \dfrac{3e^{i(-1-k)x}}{8(-k-1)}\right).\] For one thing, what happened to all of the $c_{10}$ and $c_{-3}$ and so forth that you just laboriously computed? And where did that constant term come from? What are the simplified values for $c_k$?
+\end{itemize}
+\section{Separation of Variables: Equilibrium behavior}
+\begin{itemize}
+\item Perhaps you want something more like: \\
+Find the equilibrium solution for the heat equation $\ds u_t = .005 u_{xx}$ given the initial and boundary conditions:
+\bea
+u(0,x) &=& f(x) \\
+u(t,0) &=& 6 \\
+u(t,5) &=& -3 \\
+\eea
+\item Better phrasing: \\
+Since our heat equation has both $u_t$ and $u_{xx}$, let's identify the partial differential equation that $u^{\star}(x)$ satisfies:
+\bea
+\frac{\partial u^{\star} }{\partial t} &=& 0 \\
+\eea
+because $u^{\star}$ doesn't depend on t at all, and 
+\bea
+\frac{\partial u^{\star} }{\partial x} &=& (u^{\star})'' \\
+\eea
+because $u^{\star}$ is a function of $x$.
+\item
+\end{itemize}
+\section{Separation of variables: 1D heat equation}
+\begin{itemize}
+\item Headline: No mastery credit yet. Please fix the mathematics and the explanations and resubmit. 
+\item $u(t,x) = w(t)v(x)$ not u(t,x) = w(t)v(x)
+\item Both typographical and mathematical fixes. Note the fact that there is a second derivative with respect to $x$ in the heat equation. \bea
+\dfrac{\partial u}{\partial t} &=& w'(t)v(x) \\
+\dfrac{\partial^2 u}{\partial x^2} &=& \gamma w(t)v''(x) \\
+w'(t)v(x) &=& \gamma w(t)v''(x) \\
+\dfrac{w'(t)}{w(t)} &=& \gamma \dfrac{v''(x)}{v(x)} = \mbox{constant} = -\lambda
+\eea
+\item ``We know $u(t,x) = w(t)v(x)$ and we assume that $w(t)$ is not always 0, which means we can divide by it.
+Therefore, v(x)=0 when w(t) $\neq$ 0 " What? We don't want \emph{either} $w(t)=0$ or $v(x)=0$ because both of those would generate a trivial solution $u(t,x)=0$. Also, this shouldn't be a new paragraph and there should be punctuation at the end of your sentence. Keep an eye out for that. 
+\item  Don't forget to use $\cos()$ and $\sin()$ and $\cosh()$ and $\sinh()$ and so forth. 
+\item You want to use left and right commands to ``right-size" the parentheses throughout: 
+\[u(0,x) = \cos\left(\frac{\pi}{4}x\right) \] Also, you shouldn't have two different initial conditions. There should only be one value of $u(0,x)$. Please stick with $\ds u(0,x) = x^2-8x$ as that is the one I remember giving you, as well as what you are working with down below. 
+\item ``Neumann" not ``Nuemann"
+\item $v'(x)$ not v'(x)
+\item You don't want to write $\ds v(x) = B+A\cos\left(\frac{k\pi x}{L}\right)$ with $\lambda>0$. You need to note that you have found a whole family of solutions: $v_0(x) = B$ as well as $\ds v_k(x) = A_k\cos\left(\frac{k\pi x}{L}\right)$. By the principle of superposition, your general solution will be a linear combination of all of these. 
+\item You also need to remember that when you put it back together into $u(t,x) = w(t)v(x)$ you have to keep the $\lambda$ values straight. In particular, you should not have $\ds a_0e^{-\frac{k^2\pi^2\gamma}{L^2}t}$ as one of your terms. What should it be?
+\item When you compute $\ds a_0$, please be exact. Do not round your solution. 
+\item You can simplify the $\ds a_k$ you found as well. Please do so. 
+\end{itemize}
+\end{document}
