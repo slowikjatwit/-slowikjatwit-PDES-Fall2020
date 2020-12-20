@@ -533,7 +533,7 @@ f(x) &\approx& \dfrac{3}{2}+\sum_{k=1}^{\infty} \dfrac{6((-1)^k-1)}{\pi^2 k^2}\c
 %\blue{Explain how to calculate the complex Fourier series for a suitable function. Then present the example that you solved for your mastery check.}
 A Complex Fourier Series has the form:
 \bea
-f(x) &\approx& \sum_{k=1}^{\infty} c_ke^{ikx} \\
+f(x) &\approx& \sum_{k=-\infty}^{\infty} c_ke^{ikx} \\
 \eea
 where $c_k$ is the Hermitian inner product of $f(x)$ and $e^{ikx}$. This means we need the conjugate of $e^{ikx}$ when doing the integral for the inner product.
 \bea
@@ -555,7 +555,7 @@ If we solve for k when the denominator is equal to 0, we can find the values for
 
 $k(k^6-110k^4+1009k^2-900)=0$ when k = -10, -3, -1, 0, 1 \\
 
-Solve for $c_k$ when k = -10,-3,-1,0,1 - don't forget to divide by $2\pi$ for each integral:\newline
+Solve for $c_k$ when k = -10,-3,-1,0,1,3,10 - don't forget to divide by $2\pi$ for each integral:\newline
 
 \bea
 c_{(-10)} &=& \dfrac{1}{4} \\
@@ -563,13 +563,14 @@ c_{(-3)} &=& \dfrac{-i}{8} \\
 c_{-1} &=& \dfrac{3i}{8} \\
 c_0 &=& \pi \\
 c_1 &=& \dfrac{-3i}{8}\\
+c_3 &=& \dfrac{i}{8}\\
+c_{10} &=& \dfrac{1}{4}\\
 \eea
 
 The complex Fourier Series for $f(x) = sin^3(x)+cos^2(5x)$ on $[-\pi,\pi]$ looks like:
 \bea
-f(x) &\approx& \sum_{k=1}^{\infty} c_{(-10)}e^{ikx} + c_{(-3)}e^{ikx} + c_{(-1)}e^{ikx} + c_{0}e^{ikx} + c_{1}e^{ikx} \\
-f(x) &\approx& \sum_{k=1}^{\infty} \dfrac{1}{4}e^{ikx} + \dfrac{-i}{8}e^{ikx} + \dfrac{3i}{8}e^{ikx} + \pi e^{ikx} + \dfrac{-3i}{8}e^{ikx} \\
-f(x) &\approx&  \sum_{k=1}^{\infty} \dfrac{1}{4}e^{ikx} + \dfrac{-i}{8}e^{ikx} + \pi e^{ikx}\\
+f(x) &\approx& \dfrac{1}{4}e^{-10ix} + \dfrac{-i}{8}e^{-3ix} + \dfrac{3i}{8}e^{-ix} + \pi e^{0ix} + \dfrac{-3i}{8}e^{ix} +\dfrac{i}{8}e^{3ix} +\dfrac{1}{4}e^{10ix}\\
+f(x) &\approx& \dfrac{1}{4}e^{-10ix} + \dfrac{-i}{8}e^{-3ix} + \dfrac{3i}{8}e^{-ix} + \dfrac{-3i}{8}e^{ix} +\dfrac{i}{8}e^{3ix} +\dfrac{1}{4}e^{10ix} + \pi\\
 \eea
 
 
